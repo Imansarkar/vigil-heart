@@ -15,6 +15,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        medical: "bg-gradient-to-r from-primary to-primary-light text-primary-foreground hover:from-primary/90 hover:to-primary-light/90 shadow-md",
+        emergency: "bg-status-critical text-status-critical-foreground hover:bg-status-critical/90 shadow-lg",
+        healthy: "bg-status-normal text-status-normal-foreground hover:bg-status-normal/90",
       },
       size: {
         default: "h-10 px-4 py-2",
