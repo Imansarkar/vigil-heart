@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { VitalCard, VitalStatus } from "@/components/VitalCard";
 import { AlertsPanel } from "@/components/AlertsPanel";
 import { TrendsChart } from "@/components/TrendsChart";
@@ -28,6 +29,7 @@ const generateMockData = () => {
 
 export default function Dashboard() {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [timeRange, setTimeRange] = useState<"24h" | "7d" | "30d">("24h");
   const [chartData] = useState(generateMockData());
   
@@ -125,11 +127,19 @@ export default function Dashboard() {
               <Badge className="bg-status-normal-bg text-status-normal border-status-normal/20">
                 System Active
               </Badge>
-              <Button variant="outline" size="sm">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate("/profile")}
+              >
                 <User className="h-4 w-4 mr-2" />
                 Profile
               </Button>
-              <Button variant="outline" size="sm">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate("/settings")}
+              >
                 <Settings className="h-4 w-4" />
               </Button>
             </div>
